@@ -9,7 +9,7 @@ Thursday, May 04, 2017
 ### Jenkins-LSCI Installation
 > <https://github.com/Novartis/Jenkins-LSCI/blob/master/userContent/docs/installation_and_use.md>
 ### Jenkins for Life Science-Boston Jenkins Meetup (Slides)
-> <https://drive.google.com/open?id=13XnxIw_F09cfkBzpqRHBm-m4inzAMH36ldzFAwOhoxkp>
+> <https://docs.google.com/presentation/d/13XnxIw_F09cfkBzpqRHBm-m4inzAMH36ldzFAwOhoxk/edit?usp=sharing>
 
 ## Key points
 
