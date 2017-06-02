@@ -1,9 +1,10 @@
 # Jenkins Boston Meetup: Life Sciences and Jenkins
 Notes, references and code used for the [May 4th 2017, Jenkins Boston Meetup](https://www.meetup.com/Boston-Jenkins-Area-Meetup/events/237134375/)
 # Abstract
-Jenkins-CI, despite its DevOps pedigree, provides a robust framework for the integration and standardization of scientific workflows.  Scientific applications, custom code, data management, analytics,  and Jenkins plugins can be integrated into pipelines of arbitrary complexity,  and can be made accessible through the Jenkins web portal.  As a result, research scientists can easily access and execute common data processing tasks, access high performance computing resources, collaborate with each other, and track data and metadata to enhance reproducible research. 
+[Jenkins](https://jenkins.io/index.html), despite its DevOps pedigree, provides a robust framework for the integration and standardization of scientific workflows.  Scientific applications, custom code, data management, analytics,  and Jenkins plugins can be integrated into pipelines of arbitrary complexity,  and can be made accessible through the Jenkins web portal.  As a result, research scientists can easily access and execute common data processing tasks, access high performance computing resources, collaborate with each other, and track data and metadata to enhance reproducible research. 
 # References
 1. Jenkins for Life Science Continous Integration: [github](https://github.com/Novartis/Jenkins-LSCI)
+4. Ioannis Moutsatsos K., et al. “Jenkins-CI, an Open-Source Continuous Integration System, as a Scientific Data and Image-Processing Platform.” [Journal of Biomolecular Screening (2016)](http://journals.sagepub.com/doi/abs/10.1177/1087057116679993)
 2. Jenkins-LSCI [Installation instructions](https://github.com/Novartis/Jenkins-LSCI/blob/master/userContent/docs/installation_and_use.md)
 3. Jenkins for Life Science-Boston Jenkins Meetup [(Slides)](https://docs.google.com/presentation/d/13XnxIw_F09cfkBzpqRHBm-m4inzAMH36ldzFAwOhoxk/edit?usp=sharing)
 
