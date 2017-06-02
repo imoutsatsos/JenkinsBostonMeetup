@@ -1,0 +1,558 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<project>
+  <actions/>
+  <description>This project generates &lt;a href=&quot;/job/JD_DATASET_HISTOGRAM/build?delay=0sec&quot;&gt;histogram distributions&lt;/a&gt; for selected numeric measurements</description>
+  <keepDependencies>false</keepDependencies>
+  <properties>
+    <job-metadata plugin="metadata@1.1.0b">
+      <values class="linked-list">
+        <metadata-string>
+          <name>job-type</name>
+          <description>Options: visualization,data-source
+Galaxy: tool.tool_type</description>
+          <parent class="job-metadata" reference="../../.."/>
+          <generated>false</generated>
+          <exposedToEnvironment>false</exposedToEnvironment>
+          <value>visualization</value>
+        </metadata-string>
+        <metadata-string>
+          <name>output-format</name>
+          <description>This is the data type of the output file. It can be one of the supported data types ( e.g., &quot;tabular&quot; ) or the format of the tool&apos;s input dataset ( e.g., format=&quot;input&quot; ). 
+It can also be an image type if the output is destined for visualization</description>
+          <parent class="job-metadata" reference="../../.."/>
+          <generated>false</generated>
+          <exposedToEnvironment>false</exposedToEnvironment>
+          <value>png</value>
+        </metadata-string>
+        <metadata-string>
+          <name>metadata-source</name>
+          <description>This reads the metadata information from the tool&apos;s input dataset properties file(named with the extension.properties)</description>
+          <parent class="job-metadata" reference="../../.."/>
+          <generated>false</generated>
+          <exposedToEnvironment>true</exposedToEnvironment>
+          <value>properties</value>
+        </metadata-string>
+        <metadata-string>
+          <name>project-revision</name>
+          <description>Last SVN revision number that this is based on. If modifications are made then add -mod to this revision number</description>
+          <parent class="job-metadata" reference="../../.."/>
+          <generated>false</generated>
+          <exposedToEnvironment>true</exposedToEnvironment>
+          <value>JD_DATASET_HISTOGRAM rev 9542</value>
+        </metadata-string>
+        <metadata-string>
+          <name>deprecated</name>
+          <description>A flag (true/false) to indicate whether a job is deprecated or active</description>
+          <parent class="job-metadata" reference="../../.."/>
+          <generated>false</generated>
+          <exposedToEnvironment>false</exposedToEnvironment>
+          <value>false</value>
+        </metadata-string>
+        <metadata-tree>
+          <name>stats-engine</name>
+          <parent class="job-metadata" reference="../../.."/>
+          <generated>false</generated>
+          <exposedToEnvironment>false</exposedToEnvironment>
+          <children class="linked-list">
+            <metadata-string>
+              <name>library</name>
+              <description>comma separated list of stat-engine libraries required for the job.</description>
+              <parent class="metadata-tree" reference="../../.."/>
+              <generated>false</generated>
+              <exposedToEnvironment>true</exposedToEnvironment>
+              <value>caret,sm</value>
+            </metadata-string>
+            <metadata-string>
+              <name>export-session</name>
+              <description>Options: true/false If the code supports it, it will export session data from the stat engine for debugging purposes</description>
+              <parent class="metadata-tree" reference="../../.."/>
+              <generated>false</generated>
+              <exposedToEnvironment>true</exposedToEnvironment>
+              <value>false</value>
+            </metadata-string>
+          </children>
+        </metadata-tree>
+        <metadata-string>
+          <name>compute-engine</name>
+          <parent class="job-metadata" reference="../../.."/>
+          <generated>false</generated>
+          <exposedToEnvironment>true</exposedToEnvironment>
+          <value>R</value>
+        </metadata-string>
+        <metadata-string>
+          <name>R-libraries</name>
+          <parent class="job-metadata" reference="../../.."/>
+          <generated>false</generated>
+          <exposedToEnvironment>false</exposedToEnvironment>
+          <value>lattice,latticeExtra,caret</value>
+        </metadata-string>
+        <metadata-tree>
+          <name>job-info</name>
+          <parent class="job-metadata" reference="../../.."/>
+          <generated>true</generated>
+          <exposedToEnvironment>false</exposedToEnvironment>
+          <children class="linked-list">
+            <metadata-tree>
+              <name>last-saved</name>
+              <description></description>
+              <parent class="metadata-tree" reference="../../.."/>
+              <generated>true</generated>
+              <exposedToEnvironment>false</exposedToEnvironment>
+              <children class="linked-list">
+                <metadata-date>
+                  <name>time</name>
+                  <description></description>
+                  <parent class="metadata-tree" reference="../../.."/>
+                  <generated>true</generated>
+                  <exposedToEnvironment>false</exposedToEnvironment>
+                  <value>
+                    <time>1493833967320</time>
+                    <timezone>America/New_York</timezone>
+                  </value>
+                  <checked>false</checked>
+                </metadata-date>
+                <metadata-tree>
+                  <name>user</name>
+                  <parent class="metadata-tree" reference="../../.."/>
+                  <generated>true</generated>
+                  <exposedToEnvironment>false</exposedToEnvironment>
+                  <children class="linked-list">
+                    <metadata-string>
+                      <name>display-name</name>
+                      <description></description>
+                      <parent class="metadata-tree" reference="../../.."/>
+                      <generated>true</generated>
+                      <exposedToEnvironment>false</exposedToEnvironment>
+                      <value>Ioannis Moutsatsos</value>
+                    </metadata-string>
+                    <metadata-string>
+                      <name>full-name</name>
+                      <description></description>
+                      <parent class="metadata-tree" reference="../../.."/>
+                      <generated>true</generated>
+                      <exposedToEnvironment>false</exposedToEnvironment>
+                      <value>Ioannis Moutsatsos</value>
+                    </metadata-string>
+                  </children>
+                </metadata-tree>
+              </children>
+            </metadata-tree>
+          </children>
+        </metadata-tree>
+      </values>
+    </job-metadata>
+    <com.sonyericsson.rebuild.RebuildSettings plugin="rebuild@1.25">
+      <autoRebuild>false</autoRebuild>
+      <rebuildDisabled>false</rebuildDisabled>
+    </com.sonyericsson.rebuild.RebuildSettings>
+    <hudson.model.ParametersDefinitionProperty>
+      <parameterDefinitions>
+        <hudson.model.StringParameterDefinition>
+          <name>WHAT_IS_THIS</name>
+          <description>&lt;h3&gt;&lt;a href=&quot;/view/MPDA_Dashboard/&quot;&gt;&lt;img height=&quot;24&quot; style=&quot;margin: 2px;&quot; alt=&quot;&quot; width=&quot;24&quot; src=&quot;/static/ac9e65c8/images/24x24/up.png&quot;&gt;Back to Analytics Dashboard&lt;/a&gt;&lt;/h3&gt;
+&lt;img height=&quot;150&quot; style=&quot;margin: 2px;&quot; alt=&quot;&quot; src=&quot;/userContent/pictures/histogram.jpg&quot;/&gt;
+&lt;h2&gt;1. Select a data set  from the ones available (below) or &lt;a href=&quot;/job/JD_UPLOAD_DATA/build?delay=0sec&quot;&gt;upload &lt;/a&gt;a new one&lt;/h2&gt;</description>
+          <defaultValue>Step 3: This project generates histogram distributions.</defaultValue>
+        </hudson.model.StringParameterDefinition>
+        <org.biouno.unochoice.ChoiceParameter plugin="uno-choice@1.5.3">
+          <name>DATA_RUN</name>
+          <description></description>
+          <randomName>choice-parameter-1256959526247889</randomName>
+          <visibleItemCount>1</visibleItemCount>
+          <script class="org.biouno.unochoice.model.ScriptlerScript">
+            <scriptlerScriptId>UC_helper_GetCompatibleInputRun.groovy</scriptlerScriptId>
+            <parameters class="linked-hash-map">
+              <entry>
+                <string>f</string>
+                <string>1</string>
+              </entry>
+              <entry>
+                <string>l</string>
+                <string></string>
+              </entry>
+            </parameters>
+          </script>
+          <projectName>JD_DATASET_HISTOGRAM</projectName>
+          <choiceType>PT_SINGLE_SELECT</choiceType>
+          <filterable>true</filterable>
+        </org.biouno.unochoice.ChoiceParameter>
+        <org.biouno.unochoice.CascadeChoiceParameter plugin="uno-choice@1.5.3">
+          <name>DATA_SET</name>
+          <description></description>
+          <randomName>choice-parameter-1256959532185794</randomName>
+          <visibleItemCount>1</visibleItemCount>
+          <script class="org.biouno.unochoice.model.ScriptlerScript">
+            <scriptlerScriptId>UC_helper_findCompatibleInputSetByParam.groovy</scriptlerScriptId>
+            <parameters class="linked-hash-map">
+              <entry>
+                <string>vName</string>
+                <string>DATA_RUN</string>
+              </entry>
+              <entry>
+                <string>vIncludeParent</string>
+                <string>true</string>
+              </entry>
+              <entry>
+                <string>vJobName</string>
+                <string>JD_DATASET_HISTOGRAM</string>
+              </entry>
+              <entry>
+                <string>vValue</string>
+                <string>$DATA_RUN</string>
+              </entry>
+            </parameters>
+          </script>
+          <projectName>JD_DATASET_HISTOGRAM</projectName>
+          <parameters class="linked-hash-map"/>
+          <referencedParameters>DATA_RUN</referencedParameters>
+          <choiceType>PT_SINGLE_SELECT</choiceType>
+          <filterable>true</filterable>
+        </org.biouno.unochoice.CascadeChoiceParameter>
+        <org.biouno.unochoice.DynamicReferenceParameter plugin="uno-choice@1.5.3">
+          <name>DATA_URL</name>
+          <description>A HIDDEN reference parameter [required] for referencing a user selectable data set</description>
+          <randomName>choice-parameter-1256959536221782</randomName>
+          <visibleItemCount>1</visibleItemCount>
+          <script class="org.biouno.unochoice.model.ScriptlerScript">
+            <scriptlerScriptId>UC_helper_getDataSetUrl.groovy</scriptlerScriptId>
+            <parameters class="linked-hash-map">
+              <entry>
+                <string>vDataSet</string>
+                <string>$DATA_SET</string>
+              </entry>
+            </parameters>
+          </script>
+          <projectName>JD_DATASET_HISTOGRAM</projectName>
+          <parameters class="linked-hash-map"/>
+          <referencedParameters>DATA_SET</referencedParameters>
+          <choiceType>ET_FORMATTED_HIDDEN_HTML</choiceType>
+          <omitValueField>true</omitValueField>
+        </org.biouno.unochoice.DynamicReferenceParameter>
+        <hudson.model.BooleanParameterDefinition>
+          <name>SHOW_RELATED</name>
+          <description>&lt;p&gt;Check to display similar analyses from this data set</description>
+          <defaultValue>false</defaultValue>
+        </hudson.model.BooleanParameterDefinition>
+        <org.biouno.unochoice.DynamicReferenceParameter plugin="uno-choice@1.5.3">
+          <name></name>
+          <description>&lt;h2&gt;2. Select measurements to include in the histogram&lt;/h2&gt;</description>
+          <randomName>choice-parameter-1256959545071789</randomName>
+          <visibleItemCount>1</visibleItemCount>
+          <script class="org.biouno.unochoice.model.ScriptlerScript">
+            <scriptlerScriptId>UC_RefHelper_findBuildsWhereParam.groovy</scriptlerScriptId>
+            <parameters class="linked-hash-map">
+              <entry>
+                <string>vName</string>
+                <string>DATA_SET</string>
+              </entry>
+              <entry>
+                <string>vSearchSpace</string>
+                <string>JD_DATASET_HISTOGRAM </string>
+              </entry>
+              <entry>
+                <string>vShow</string>
+                <string>$SHOW_RELATED</string>
+              </entry>
+              <entry>
+                <string>vValue</string>
+                <string>$DATA_SET</string>
+              </entry>
+            </parameters>
+          </script>
+          <projectName>JD_DATASET_HISTOGRAM</projectName>
+          <parameters class="linked-hash-map"/>
+          <referencedParameters>DATA_SET,SHOW_RELATED</referencedParameters>
+          <choiceType>ET_FORMATTED_HTML</choiceType>
+          <omitValueField>false</omitValueField>
+        </org.biouno.unochoice.DynamicReferenceParameter>
+        <org.biouno.unochoice.CascadeChoiceParameter plugin="uno-choice@1.5.3">
+          <name>READOUTS</name>
+          <description>Numerical readouts to be plotted as heatmaps
+&lt;h2&gt;3.  Annotate this build&lt;/h2&gt;</description>
+          <randomName>choice-parameter-1256959556212870</randomName>
+          <visibleItemCount>1</visibleItemCount>
+          <script class="org.biouno.unochoice.model.ScriptlerScript">
+            <scriptlerScriptId>UC_helper_getPropertyFromDataUrl.groovy</scriptlerScriptId>
+            <parameters class="linked-hash-map">
+              <entry>
+                <string>vPropKey</string>
+                <string>frame.numericColumns</string>
+              </entry>
+              <entry>
+                <string>vDataUrl</string>
+                <string>$DATA_URL</string>
+              </entry>
+            </parameters>
+          </script>
+          <projectName>JD_DATASET_HISTOGRAM</projectName>
+          <parameters class="linked-hash-map"/>
+          <referencedParameters>DATA_URL,DATA_SET</referencedParameters>
+          <choiceType>PT_MULTI_SELECT</choiceType>
+          <filterable>true</filterable>
+        </org.biouno.unochoice.CascadeChoiceParameter>
+        <org.biouno.unochoice.DynamicReferenceParameter plugin="uno-choice@1.5.3">
+          <name>BUILD_LABEL</name>
+          <description>This label will be used as the BUILD NAME and can assist you in easily identifying this build</description>
+          <randomName>choice-parameter-1256959560646115</randomName>
+          <visibleItemCount>1</visibleItemCount>
+          <script class="org.biouno.unochoice.model.ScriptlerScript">
+            <scriptlerScriptId>UC_RefHelper_getSimpleBuildLabel.groovy</scriptlerScriptId>
+            <parameters class="linked-hash-map">
+              <entry>
+                <string>vDataSet</string>
+                <string>$DATA_SET</string>
+              </entry>
+              <entry>
+                <string>vCode</string>
+                <string>Readout.Histograms</string>
+              </entry>
+            </parameters>
+          </script>
+          <projectName>JD_DATASET_HISTOGRAM</projectName>
+          <parameters class="linked-hash-map"/>
+          <referencedParameters>DATA_SET</referencedParameters>
+          <choiceType>ET_FORMATTED_HTML</choiceType>
+          <omitValueField>true</omitValueField>
+        </org.biouno.unochoice.DynamicReferenceParameter>
+      </parameterDefinitions>
+    </hudson.model.ParametersDefinitionProperty>
+  </properties>
+  <scm class="hudson.scm.NullSCM"/>
+  <canRoam>true</canRoam>
+  <disabled>false</disabled>
+  <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
+  <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
+  <triggers/>
+  <concurrentBuild>false</concurrentBuild>
+  <builders>
+    <org.biouno.r.R plugin="r@0.4">
+      <command># PP_DATASET_HISTOGRAM
+# Generates histogram distributions for selected numeric measurements across all assay plates
+#--------------------------------------------------------------------- #
+# DMPQM-363, DMPQM-293
+# DMPQM-261, DMPQM-257, DMPQM-234, DMPQM-231, DMPQM-204, DMPQM-171 
+# LAST_UPDATE: AUG-06-2015
+#--------------------------------------------------------------------- #
+
+library(lattice); library(latticeExtra); library(caret)
+
+# GENERIC HEADER FOR IMPORTING ENVIRONMENT &amp; PARAMETERS in R-SCRIPT
+#Jenkins Environment
+names(e&lt;-Sys.getenv(c(&quot;JENKINS_HOME&quot;, &quot;WORKSPACE&quot;, &quot;COMPUTERNAME&quot;,&quot;BUILD_RECORD_ROOT&quot;)))
+jhome&lt;-gsub(&quot;\\\\&quot;,&quot;/&quot;,e[&apos;JENKINS_HOME&apos;])   #DMPQM-231
+jworkspace&lt;-gsub(&quot;\\\\&quot;,&quot;/&quot;,e[&apos;WORKSPACE&apos;]) #DMPQM-231
+jcomputer&lt;-e[&apos;COMPUTERNAME&apos;]
+jbuild.record.root&lt;-e[&apos;BUILD_RECORD_ROOT&apos;]
+
+#Job Parameters
+names(j&lt;-Sys.getenv(c(&quot;JOB_NAME&quot;,&quot;JOB_URL&quot;)))
+job.name&lt;-j[&apos;JOB_NAME&apos;]
+job.url&lt;-j[&apos;JOB_URL&apos;]
+
+#Build Identifiers
+names(b&lt;-Sys.getenv(c(&quot;BUILD_TAG&quot;,&quot;BUILD_ID&quot;,&quot;BUILD_URL&quot;)))
+build.tag&lt;-b[&apos;BUILD_TAG&apos;]
+build.id&lt;-b[&apos;BUILD_ID&apos;]
+build.url&lt;-b[&apos;BUILD_URL&apos;]
+
+#Build Parameters
+#...additional parameters used in the build can be imported and added here
+names(p&lt;-Sys.getenv(c(&quot;BUILD_LABEL&quot;, &quot;DATA_URL&quot;,&quot;READOUTS&quot;)))
+bparam.label&lt;-p[&apos;BUILD_LABEL&apos;]
+bparam.dataurl&lt;-p[&apos;DATA_URL&apos;]
+bparam.readouts&lt;-p[&apos;READOUTS&apos;]
+#bparam.removebad&lt;-p[&apos;REMOVE_MASKED_PLATES&apos;]
+
+# Read data properties ----------------------------------------------------
+# Read data properties from archived Jenkins artifact
+# Get data/properties file name by convention
+urlParts &lt;-unlist(strsplit(bparam.dataurl,&apos;/&apos;)) 
+sourceJob=urlParts[5]
+sourceBuild=urlParts[6]
+dataFileName=urlParts[length(urlParts)]
+propertiesFileName=gsub(&quot;\\.csv&quot;,&quot;\\.properties&quot;,dataFileName)
+binrobjectFileName=gsub(&quot;\\.csv&quot;,&quot;\\.Rds&quot;,dataFileName) # a serialized R binary object
+
+# Read data properties from local server path (performance over Url)
+propPath=sprintf(&quot;%s/jobs/%s/builds/%s/archive/%s&quot;,jhome,sourceJob,sourceBuild,propertiesFileName)
+print (&apos;Reading Data Set Properties....&apos;)
+data.props&lt;-read.table(propPath, header=FALSE, sep=&quot;=&quot;, row.names=1, strip.white=TRUE, na.strings=&quot;NA&quot;, stringsAsFactors=FALSE)
+
+#Extract required metadata from JData.properties file
+thisdata.path=sprintf(&quot;%s%s&quot;,jbuild.record.root,data.props[&apos;archive.path&apos;,1]) #DMPQM-363
+number.columns &lt;-unlist(strsplit(data.props[&apos;frame.numericColumns&apos;,1],&apos;,&apos;))
+anno.columns&lt;-unlist(strsplit(data.props[&apos;frame.characterColumns&apos;,1],&apos;,&apos;))
+
+
+#Assign local script variables from build parameters
+#rlocal.varName&lt;-unlist(strsplit(bparam.buildParam,&apos;,&apos;))# assign a local R variable from the
+plate.barcode&lt;-data.props[&apos;plate.barcode&apos;,1]
+plate.column&lt;-data.props[&apos;plate.column&apos;,1]
+plate.row&lt;-data.props[&apos;plate.row&apos;,1]
+pngdest&lt;-sprintf(&quot;%s/%s%s&quot;, jworkspace,build.id,&quot;%03d.png&quot;)
+
+
+print (&apos;Reading Data Set....&apos;)
+# Start the clock!
+ptm &lt;- proc.time()
+#DMPQM-234: Read the data from local path and continue processing
+sourceobject.path&lt;-sprintf(&quot;%s%s&quot;,thisdata.path,binrobjectFileName) #DMPQM-293
+sourcedata.path&lt;-sprintf(&quot;%s%s&quot;,thisdata.path,dataFileName)
+
+#DMPQM-293 Prefer to load data from R binary Object file
+if(file.exists(sourceobject.path)){
+  print(&quot;Loading data from Binary R Object...&quot;)
+  #Read serialized R object and assign to data frame hcs
+  hcs&lt;-readRDS(sourceobject.path)
+}else{
+  #load from CSV format data if binary R does not exist
+  print(&quot;Loading data from CSV file...&quot;)
+  rows2read=as.numeric(data.props[&apos;data.rows&apos;,1])+10
+  hcs&lt;-read.csv(sourcedata.path,header=TRUE,stringsAsFactors=FALSE, quote = &quot;&quot;, nrows=rows2read, comment.char = &quot;&quot;)
+}
+# Stop the clock
+proc.time() - ptm
+print (&apos;Finished Reading Data Set!&apos;)
+
+attach(hcs)
+
+#Additional data grooming and processing goes here
+
+#---------------------------------------
+# Write Metadata Back to properties file
+# Include any new or updated properties
+#---------------------------------------
+
+#Write build metadata
+
+propPath&lt;-sprintf(&quot;%s%s&quot;,thisdata.path,propertiesFileName) #DMPQM-257
+buildid&lt;-sprintf(&quot;%s.%s&quot;,build.id,&quot;build&quot;)
+data.props[buildid,1]&lt;-job.name
+
+buildurl&lt;-sprintf(&quot;%s.%s&quot;,build.id,&quot;buildurl&quot;)
+data.props[buildurl,1]&lt;-build.url
+
+buildparams&lt;-sprintf(&quot;%s.%s&quot;,build.id,&quot;buildparams&quot;)
+data.props[buildparams,1]&lt;-sprintf(&quot;%sparameters&quot;,build.url)
+
+buildtag&lt;-sprintf(&quot;%s.%s&quot;,build.id,&quot;buildtag&quot;)
+data.props[buildtag,1]&lt;-build.tag
+
+#Write any new data properties contributed by this Jenkins Job here...
+last.readouts&lt;-sprintf(&quot;%s.LAST.readouts&quot;,job.name)
+data.props[last.readouts,1]&lt;-bparam.readouts
+
+last.buildtag&lt;-sprintf(&quot;%s.LAST&quot;,job.name)
+data.props[last.buildtag,1]&lt;-sprintf(&quot;%s.(%s)&quot;, build.tag,build.id)
+# Add to data set history
+job.history&lt;-sprintf(&quot;%s.HISTORY&quot;,job.name)
+if (is.na(data.props[job.history,1])){
+  data.props[job.history,1]&lt;-data.props[last.buildtag,1] # first buildtag entry to job history
+}else{
+  data.props[job.history,1]&lt;-sprintf(&quot;%s,%s&quot;, data.props[job.history,1],data.props[last.buildtag,1])# append current buildtag to job history  
+}
+
+#Replace data properties file with new version
+write.table(data.props, propPath, sep=&quot;=&quot;, quote=FALSE,row.names=TRUE,col.names=FALSE)
+
+#--------------------------------------------------------------------- #
+# set colour scheme
+levelcols &lt;- colorRampPalette(rev(c(&quot;darkred&quot;,&quot;red&quot;,&quot;orange&quot;,
+                                    &quot;white&quot;,&quot;lightgreen&quot;,&quot;blue&quot;,&quot;darkblue&quot;)))
+# separate out annotation columns (Barcode, Column, Row, etc.)
+anno &lt;- hcs[,anno.columns]
+
+
+#subset for numeric columns (this also removes dates etc) that are not annotation columns
+hcs &lt;-hcs[, which(names(hcs) %in% number.columns &amp; !names(hcs)%in% anno.columns)]
+
+png(filename=pngdest, height=10, width=14, res=100, units=&quot;in&quot;)
+pngdestColumn=c()
+par(las=3, mar=c(6.1,4,3,1))
+
+#use column names instead of indices
+count.p&lt;-unlist(strsplit(bparam.readouts,&apos;,&apos;))
+pngdestReadouts&lt;-count.p
+
+k&lt;-1
+for (i in count.p){
+  hist(hcs[,i], breaks=100, col=&quot;grey&quot;, border=&quot;white&quot;,
+       main=&quot;&quot;, xlab=i)
+  pngdestColumn=rbind(pngdestColumn,sprintf(&quot;%sartifact/%s%03d.png&quot;,build.url,build.id,k))
+  k&lt;-k+1
+}
+
+dev.off()
+
+#DMPQM-204 write graphic properties table for Summary Display report
+pngData&lt;-data.frame(&apos;QC_GRAPH&apos;=pngdestColumn,DataColumn=pngdestReadouts)
+pngmetadest&lt;-sprintf(&quot;%s/%s&quot;, jworkspace,&quot;pngmetadest.csv&quot;)
+write.table(pngData, pngmetadest, sep=&quot;,&quot;, quote=FALSE, row.names=FALSE, col.names=TRUE)</command>
+    </org.biouno.r.R>
+    <org.jenkinsci.plugins.scriptler.builder.ScriptlerBuilder plugin="scriptler@2.9">
+      <builderId>1407867384264_9</builderId>
+      <scriptId>writeXMLProperties_scriptlet.groovy</scriptId>
+      <propagateParams>false</propagateParams>
+      <parameters>
+        <org.jenkinsci.plugins.scriptler.config.Parameter>
+          <name>workspaceVar</name>
+          <value>$WORKSPACE</value>
+        </org.jenkinsci.plugins.scriptler.config.Parameter>
+        <org.jenkinsci.plugins.scriptler.config.Parameter>
+          <name>configProps</name>
+          <value>${JENKINS_HOME}/jobs/${JOB_NAME}/buildProps/report.properties</value>
+        </org.jenkinsci.plugins.scriptler.config.Parameter>
+      </parameters>
+    </org.jenkinsci.plugins.scriptler.builder.ScriptlerBuilder>
+  </builders>
+  <publishers>
+    <hudson.tasks.ArtifactArchiver>
+      <artifacts>*.*</artifacts>
+      <allowEmptyArchive>false</allowEmptyArchive>
+      <onlyIfSuccessful>false</onlyIfSuccessful>
+      <fingerprint>false</fingerprint>
+      <defaultExcludes>true</defaultExcludes>
+      <caseSensitive>true</caseSensitive>
+    </hudson.tasks.ArtifactArchiver>
+    <hudson.plugins.summary__report.ACIPluginPublisher plugin="summary_report@1.15">
+      <name>writeXmlSummary.xml</name>
+      <shownOnProjectPage>false</shownOnProjectPage>
+    </hudson.plugins.summary__report.ACIPluginPublisher>
+    <org.jvnet.hudson.plugins.groovypostbuild.GroovyPostbuildRecorder plugin="groovy-postbuild@2.3.1">
+      <script plugin="script-security@1.27">
+        <script>/* jnknsysGroovy_CleanWorkspace.groovy
+ * A simple Groovy script to clean up a Jenkins project workspace folder
+ * Since December 14-2012
+ * author Ioannis k. Moutsatsos
+*/
+import hudson.model.*
+
+// get current thread / Executor
+def thr = Thread.currentThread()
+// get current build
+def build = thr?.executable
+def options =new HashMap()
+
+// build/environmental variables
+def envVarsMap = build.parent.builds[0].properties.get(&quot;envVars&quot;)
+options.putAll(envVarsMap)
+
+//Clean up all files in workspace recursively using the Antbuilder method
+def ant= new AntBuilder()
+println &quot;Post-Build Action: Cleaning Workspace: ${options.WORKSPACE}&quot;
+//deletes all files and subdirectories of WORKSPACE, without WORKSPACE itself.
+ant.delete{fileset(dir:&quot;${options.WORKSPACE}&quot;, includes:&quot;**/*.png, **/*.csv&quot;)}</script>
+        <sandbox>false</sandbox>
+      </script>
+      <behavior>0</behavior>
+      <runForMatrixParent>false</runForMatrixParent>
+    </org.jvnet.hudson.plugins.groovypostbuild.GroovyPostbuildRecorder>
+  </publishers>
+  <buildWrappers>
+    <org.jenkinsci.plugins.buildnamesetter.BuildNameSetter plugin="build-name-setter@1.6.5">
+      <template>#${ENV,var=&quot;BUILD_NUMBER&quot;}_${ENV,var=&quot;BUILD_LABEL&quot;}</template>
+      <runAtStart>true</runAtStart>
+      <runAtEnd>true</runAtEnd>
+    </org.jenkinsci.plugins.buildnamesetter.BuildNameSetter>
+  </buildWrappers>
+</project>

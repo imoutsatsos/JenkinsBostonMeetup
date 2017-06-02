@@ -1,0 +1,479 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<project>
+  <actions/>
+  <description>This project helps you upload delimited data and binary files. &lt;p&gt;Additional metadata is extracted from delimited data sets</description>
+  <keepDependencies>false</keepDependencies>
+  <properties>
+    <job-metadata plugin="metadata@1.1.0b">
+      <values class="linked-list">
+        <metadata-string>
+          <name>job-type</name>
+          <description>Options: visualization,data-source
+Galaxy: tool.tool_type</description>
+          <parent class="job-metadata" reference="../../.."/>
+          <generated>false</generated>
+          <exposedToEnvironment>false</exposedToEnvironment>
+          <value>data-source</value>
+        </metadata-string>
+        <metadata-string>
+          <name>output-format</name>
+          <description>This is the data type of the output file. It can be one of the supported data types ( e.g., &quot;tabular&quot; ) or the format of the tool&apos;s input dataset ( e.g., format=&quot;input&quot; ). 
+It can also be an image type if the output is destined for visualization</description>
+          <parent class="job-metadata" reference="../../.."/>
+          <generated>false</generated>
+          <exposedToEnvironment>false</exposedToEnvironment>
+          <value>csv,rds,other</value>
+        </metadata-string>
+        <metadata-string>
+          <name>metadata-source</name>
+          <description>This reads the metadata information from the tool&apos;s input dataset properties file(named with the extension.properties)</description>
+          <parent class="job-metadata" reference="../../.."/>
+          <generated>false</generated>
+          <exposedToEnvironment>true</exposedToEnvironment>
+          <value>user</value>
+        </metadata-string>
+        <metadata-string>
+          <name>project-revision</name>
+          <description>Last SVN revision number that this is based on. If modifications are made then add -mod to this revision number</description>
+          <parent class="job-metadata" reference="../../.."/>
+          <generated>false</generated>
+          <exposedToEnvironment>true</exposedToEnvironment>
+          <value>FILE_UPLOAD_DMPQM197.R rev9582</value>
+        </metadata-string>
+        <metadata-string>
+          <name>deprecated</name>
+          <description>A flag (true/false) to indicate whether a job is deprecated or active</description>
+          <parent class="job-metadata" reference="../../.."/>
+          <generated>false</generated>
+          <exposedToEnvironment>false</exposedToEnvironment>
+          <value>false</value>
+        </metadata-string>
+        <metadata-tree>
+          <name>stats-engine</name>
+          <parent class="job-metadata" reference="../../.."/>
+          <generated>false</generated>
+          <exposedToEnvironment>false</exposedToEnvironment>
+          <children class="linked-list">
+            <metadata-string>
+              <name>library</name>
+              <description>comma separated list of stat-engine libraries required for the job.</description>
+              <parent class="metadata-tree" reference="../../.."/>
+              <generated>false</generated>
+              <exposedToEnvironment>true</exposedToEnvironment>
+              <value>caret,sm</value>
+            </metadata-string>
+            <metadata-string>
+              <name>export-session</name>
+              <description>Options: true/false If the code supports it, it will export session data from the stat engine for debugging purposes</description>
+              <parent class="metadata-tree" reference="../../.."/>
+              <generated>false</generated>
+              <exposedToEnvironment>true</exposedToEnvironment>
+              <value>false</value>
+            </metadata-string>
+          </children>
+        </metadata-tree>
+        <metadata-tree>
+          <name>job-info</name>
+          <parent class="job-metadata" reference="../../.."/>
+          <generated>true</generated>
+          <exposedToEnvironment>false</exposedToEnvironment>
+          <children class="linked-list">
+            <metadata-tree>
+              <name>last-saved</name>
+              <description></description>
+              <parent class="metadata-tree" reference="../../.."/>
+              <generated>true</generated>
+              <exposedToEnvironment>false</exposedToEnvironment>
+              <children class="linked-list">
+                <metadata-date>
+                  <name>time</name>
+                  <description></description>
+                  <parent class="metadata-tree" reference="../../.."/>
+                  <generated>true</generated>
+                  <exposedToEnvironment>false</exposedToEnvironment>
+                  <value>
+                    <time>1493843240397</time>
+                    <timezone>America/New_York</timezone>
+                  </value>
+                  <checked>false</checked>
+                </metadata-date>
+                <metadata-tree>
+                  <name>user</name>
+                  <parent class="metadata-tree" reference="../../.."/>
+                  <generated>true</generated>
+                  <exposedToEnvironment>false</exposedToEnvironment>
+                  <children class="linked-list">
+                    <metadata-string>
+                      <name>display-name</name>
+                      <description></description>
+                      <parent class="metadata-tree" reference="../../.."/>
+                      <generated>true</generated>
+                      <exposedToEnvironment>false</exposedToEnvironment>
+                      <value>Ioannis Moutsatsos</value>
+                    </metadata-string>
+                    <metadata-string>
+                      <name>full-name</name>
+                      <description></description>
+                      <parent class="metadata-tree" reference="../../.."/>
+                      <generated>true</generated>
+                      <exposedToEnvironment>false</exposedToEnvironment>
+                      <value>Ioannis Moutsatsos</value>
+                    </metadata-string>
+                  </children>
+                </metadata-tree>
+              </children>
+            </metadata-tree>
+          </children>
+        </metadata-tree>
+      </values>
+    </job-metadata>
+    <com.sonyericsson.rebuild.RebuildSettings plugin="rebuild@1.25">
+      <autoRebuild>false</autoRebuild>
+      <rebuildDisabled>false</rebuildDisabled>
+    </com.sonyericsson.rebuild.RebuildSettings>
+    <hudson.model.ParametersDefinitionProperty>
+      <parameterDefinitions>
+        <hudson.model.StringParameterDefinition>
+          <name>WHAT_IS_THIS</name>
+          <description>&lt;img height=&quot;75&quot; style=&quot;margin: 2px;&quot; alt=&quot;&quot; src=&quot;/userContent/pictures/Upload-Folder-icon.png&quot;/&gt;
+&lt;h2 style=&quot;color:blue&quot;&gt;1. Select data set and assign file contents&lt;/h2&gt;
+</description>
+          <defaultValue>This project helps you upload delimited data and binary files. Additional metadata is extracted from delimited data sets</defaultValue>
+        </hudson.model.StringParameterDefinition>
+        <hudson.model.FileParameterDefinition>
+          <name>My_file</name>
+          <description>&lt;p&gt;A file to be uploaded. Please &lt;b&gt;verify the FILE_CONTENT below&lt;/b&gt; for correct processing!
+
+</description>
+        </hudson.model.FileParameterDefinition>
+        <org.biouno.unochoice.CascadeChoiceParameter plugin="uno-choice@1.5.3">
+          <name>FILE_CONTENT</name>
+          <description>&lt;p&gt;Describes the primary content of the file.
+&lt;h2 style=&quot;color:blue&quot;&gt;2. Annotate the data set for easy discovery&lt;/h2&gt;</description>
+          <randomName>choice-parameter-1594839833728029</randomName>
+          <visibleItemCount>1</visibleItemCount>
+          <script class="org.biouno.unochoice.model.ScriptlerScript">
+            <scriptlerScriptId>UC_helper_detectFileType.groovy</scriptlerScriptId>
+            <parameters class="linked-hash-map">
+              <entry>
+                <string>vMyFile</string>
+                <string>$My_file</string>
+              </entry>
+            </parameters>
+          </script>
+          <projectName>JD_FILE_UPLOAD</projectName>
+          <parameters class="linked-hash-map"/>
+          <referencedParameters>My_file</referencedParameters>
+          <choiceType>PT_SINGLE_SELECT</choiceType>
+          <filterable>false</filterable>
+        </org.biouno.unochoice.CascadeChoiceParameter>
+        <hudson.model.StringParameterDefinition>
+          <name>DATA_LABEL</name>
+          <description>Give an easily recognizable short label
+</description>
+          <defaultValue>MY_UPLOADED_DATA</defaultValue>
+        </hudson.model.StringParameterDefinition>
+        <com.seitenbau.jenkins.plugins.dynamicparameter.scriptler.ScriptlerChoiceParameterDefinition plugin="dynamicparameter@0.2.1-SNAPSHOT">
+          <name>DATA_OWNER</name>
+          <description>Please, assign the data set owner</description>
+          <__uuid>55a41311-41b9-4e98-8a40-7bdf850b1e15</__uuid>
+          <__remote>false</__remote>
+          <__scriptlerScriptId>AllUsers.groovy</__scriptlerScriptId>
+          <__parameters>
+            <com.seitenbau.jenkins.plugins.dynamicparameter.scriptler.ScriptlerParameterDefinition_-ScriptParameter>
+              <name></name>
+              <value></value>
+            </com.seitenbau.jenkins.plugins.dynamicparameter.scriptler.ScriptlerParameterDefinition_-ScriptParameter>
+          </__parameters>
+          <readonlyInputField>false</readonlyInputField>
+        </com.seitenbau.jenkins.plugins.dynamicparameter.scriptler.ScriptlerChoiceParameterDefinition>
+        <hudson.model.TextParameterDefinition>
+          <name>DESCRIPTION</name>
+          <description>&lt;p&gt;Provide a description to aid data annotation and discovery
+</description>
+          <defaultValue>My Interesting Data</defaultValue>
+        </hudson.model.TextParameterDefinition>
+      </parameterDefinitions>
+    </hudson.model.ParametersDefinitionProperty>
+  </properties>
+  <scm class="hudson.scm.NullSCM"/>
+  <canRoam>true</canRoam>
+  <disabled>false</disabled>
+  <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
+  <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
+  <triggers/>
+  <concurrentBuild>false</concurrentBuild>
+  <builders>
+    <org.jenkinsci.plugins.scriptler.builder.ScriptlerBuilder plugin="scriptler@2.9">
+      <builderId>1404335187631_20</builderId>
+      <scriptId>RenameBuildArtifact.groovy</scriptId>
+      <propagateParams>false</propagateParams>
+      <parameters>
+        <org.jenkinsci.plugins.scriptler.config.Parameter>
+          <name>sourceName</name>
+          <value>$WORKSPACE/My_file</value>
+        </org.jenkinsci.plugins.scriptler.config.Parameter>
+        <org.jenkinsci.plugins.scriptler.config.Parameter>
+          <name>targetName</name>
+          <value>$WORKSPACE/$My_file</value>
+        </org.jenkinsci.plugins.scriptler.config.Parameter>
+      </parameters>
+    </org.jenkinsci.plugins.scriptler.builder.ScriptlerBuilder>
+    <org.biouno.r.R plugin="r@0.4">
+      <command># FILE_UPLOAD_DMPQM197
+# Extracts metadata from a CSV/TSV files and stores it to a JData.properties file in the workspace
+# UPLOAD handles a variety of other data files but only tabular data is introspected
+#--------------------------------------------------------------------- #
+# DMPQM-363, DMPQM-236, DMPQM-231, DMPQM-197
+# LAST_UPDATE: AUG-10-2015
+#--------------------------------------------------------------------- #
+# Author Ioannis K. Moutsatsos
+# Since July 2, 2014
+
+# GENERIC HEADER FOR IMPORTING ENVIRONMENT &amp; PARAMETERS in R-SCRIPT
+# Jenkins Environment -----------------------------------------------------
+names(e&lt;-Sys.getenv(c(&quot;JENKINS_HOME&quot;, &quot;WORKSPACE&quot;, &quot;COMPUTERNAME&quot;,&quot;BUILD_RECORD_ROOT&quot; )))
+
+jhome&lt;-gsub(&quot;\\\\&quot;,&quot;/&quot;,e[&apos;JENKINS_HOME&apos;])
+jworkspace&lt;-gsub(&quot;\\\\&quot;,&quot;/&quot;,e[&apos;WORKSPACE&apos;])
+jcomputer&lt;-e[&apos;COMPUTERNAME&apos;]
+jenkins.url&lt;-e[&apos;JENKINS_URL&apos;]
+jbuild.record.root&lt;-e[&apos;BUILD_RECORD_ROOT&apos;]
+
+#Job Parameters
+names(j&lt;-Sys.getenv(c(&quot;JOB_NAME&quot;,&quot;JOB_URL&quot;)))
+job.name&lt;-j[&apos;JOB_NAME&apos;]
+job.url&lt;-j[&apos;JOB_URL&apos;]
+
+#Build Identifiers
+names(b&lt;-Sys.getenv(c(&quot;BUILD_TAG&quot;,&quot;BUILD_ID&quot;,&quot;BUILD_URL&quot;)))
+build.tag&lt;-b[&apos;BUILD_TAG&apos;]
+build.id&lt;-b[&apos;BUILD_ID&apos;]
+build.url&lt;-b[&apos;BUILD_URL&apos;]
+
+#Build Parameters
+#...other params are imported and added here
+names(p&lt;-Sys.getenv(c(&quot;DATA_LABEL&quot;,&quot;DATA_OWNER&quot;,&quot;DESCRIPTION&quot;,&quot;ASSAY_TECHNOLOGY&quot;,&quot;JData_ori.csv&quot;,&quot;INSTRUMENT&quot;,
+                      &quot;DATA_PROCESSING&quot;,&quot;ASSAY_LAYOUT&quot;,&quot;SAMPLE_ARRANGEMENT&quot;,&quot;SAMPLE_UNIQUE_ID&quot;,&quot;FILE_CONTENT&quot;,
+                      &quot;FILE_RELATION&quot;,&quot;FILE_RELATIVES&quot;,&quot;IGNORE_TECHNOLOGY_METADATA&quot;)))
+
+bparam.datalabel&lt;-p[&apos;DATA_LABEL&apos;]
+bparam.dataowner&lt;-p[&apos;DATA_OWNER&apos;]
+bparam.description&lt;-p[&apos;DESCRIPTION&apos;]
+bparam.dataclass&lt;-p[&apos;ASSAY_TECHNOLOGY&apos;]
+bparam.jdataori&lt;-p[&apos;JData_ori.csv&apos;]
+
+bparam.instrument&lt;-p[&apos;INSTRUMENT&apos;]
+bparam.dataprocessing&lt;-p[&apos;DATA_PROCESSING&apos;]
+bparam.samplegeometry&lt;-p[&apos;ASSAY_LAYOUT&apos;]
+bparam.samplearrangement&lt;-p[&apos;SAMPLE_ARRANGEMENT&apos;]
+bparam.sampleuniqueid&lt;-p[&apos;SAMPLE_UNIQUE_ID&apos;]
+
+bparam.filecontent&lt;-p[&apos;FILE_CONTENT&apos;]
+bparam.filerelation&lt;-p[&apos;FILE_RELATION&apos;]
+bparam.filerelatives&lt;-p[&apos;FILE_RELATIVES&apos;]
+bparam.ignoretechmeta&lt;-p[&apos;IGNORE_TECHNOLOGY_METADATA&apos;]
+
+this.output&lt;-&quot;JData.csv&quot; #Hard-coded name of output file
+this.Rds.output&lt;-&quot;JData.Rds&quot; #Hard-coded name of serialized R data frame object
+this.artifacts&lt;-&quot;*zip*/archive.zip&quot;
+bparam.jdatacsv&lt;-bparam.jdataori
+
+#---------------------------------------
+# Write Metadata Back to properties file
+# Include any new or updated properties
+#---------------------------------------
+
+#Create Destination file for data properties
+propPath&lt;-sprintf(&quot;%s/%s&quot;,jworkspace,&quot;JData.properties&quot;)
+file.create(propPath)
+
+#Create build metadata
+
+buildid&lt;-sprintf(&quot;%s.%s&quot;,build.id,&quot;build&quot;)
+buildurl&lt;-sprintf(&quot;%s.%s&quot;,build.id,&quot;buildurl&quot;)
+buildparams&lt;-sprintf(&quot;%s.%s&quot;,build.id,&quot;buildparams&quot;)
+buildtag&lt;-sprintf(&quot;%s.%s&quot;,build.id,&quot;buildtag&quot;)
+
+#Create a new data frame to maintain properties-Record Jenkins Server
+data.props&lt;-as.data.frame(matrix(c(&quot;jenkins.computername&quot;,jcomputer),ncol=2),stringsAsFactors=FALSE)
+data.props&lt;-rbind(data.props,c(&quot;jenkins.home&quot;,jhome))
+data.props&lt;-rbind(data.props,c(buildid,job.name))
+data.props&lt;-rbind(data.props,c(buildurl,build.url))
+data.props&lt;-rbind(data.props,c(buildparams,sprintf(&quot;%sparameters&quot;,build.url)))
+data.props&lt;-rbind(data.props,c(buildtag,build.tag))
+
+#Only Open Data with R if File Content is Tabular Data --------------------------------------------------
+if(bparam.filecontent==&apos;CSV_TABLE&apos;){
+    mergefrom&lt;-sprintf(&quot;%s/%s&quot;, jworkspace,bparam.jdatacsv)
+    hcs&lt;-read.csv(mergefrom,header=TRUE,stringsAsFactors=FALSE, quote=&quot;\&quot;&quot;)
+    attach(hcs)
+}
+if(bparam.filecontent==&apos;TSV_TABLE&apos;){
+  mergefrom&lt;-sprintf(&quot;%s/%s&quot;, jworkspace,bparam.jdatacsv)
+  hcs&lt;-read.table(mergefrom,header=TRUE,stringsAsFactors=FALSE, sep=&quot;\t&quot;)
+  attach(hcs)
+}
+    
+if(bparam.filecontent==&apos;CSV_TABLE&apos;||bparam.filecontent==&apos;TSV_TABLE&apos; ){
+    #Identify and remove blank columns
+    blank.columns=names(hcs[, sapply(hcs, function(x) all(is.na(x)))])
+    # toString(paste(blank.columns,collapse=&quot;,&quot;))
+    hcs&lt;-hcs[, sapply(hcs, function(x) !all(is.na(x)))]
+    
+    #Create data frame statistics
+    data.props&lt;-rbind(data.props,c(&quot;data.rows&quot;,nrow(hcs)))
+    data.props&lt;-rbind(data.props,c(&quot;data.cols&quot;,length(hcs)))
+    data.props&lt;-rbind(data.props,c(&quot;data.complete&quot;,sum(complete.cases(hcs))))
+    
+    #Create data frame column type properties
+    data.props&lt;-rbind(data.props,c(&quot;frame.blankColumns&quot;,toString(paste(blank.columns,collapse=&quot;,&quot;))))
+    data.props&lt;-rbind(data.props,c(&quot;frame.characterColumns&quot;,toString(paste(names(hcs[sapply(hcs, is.character)]),collapse=&quot;,&quot;))))
+    data.props&lt;-rbind(data.props,c(&quot;frame.numericColumns&quot;,toString(paste(names(hcs[sapply(hcs, is.numeric)]),collapse=&quot;,&quot;))))
+    
+    #Create Data Download links
+    data.props&lt;-rbind(data.props,c(&quot;download.build.data&quot;,sprintf(&quot;%sartifact/%s&quot;,build.url,this.output)))
+    
+    #Create Destination file for metadata
+    metadest&lt;-sprintf(&quot;%s/%s&quot;, jworkspace,&quot;meta.csv&quot;)
+    
+    #write table of metadata columns
+    write.table(names(hcs[sapply(hcs, is.character)]), metadest, sep=&quot;,&quot;, quote=FALSE, row.names=TRUE, col.names=FALSE)
+    
+    #Create Destination file for measurements
+    frameNumsDest&lt;-sprintf(&quot;%s/%s&quot;, jworkspace,&quot;measure.csv&quot;)
+    
+    #write table of measurements columns
+    write.table(names(hcs[sapply(hcs, is.numeric)]), frameNumsDest, sep=&quot;,&quot;, quote=FALSE, row.names=TRUE, col.names=FALSE)    
+    
+    #Write CIVILIZED data set file
+    #civdest&lt;-sprintf(&quot;%s/%s&quot;, jworkspace,&quot;JData.csv&quot;)
+    #write.table(hcs, civdest, sep=&quot;,&quot;, quote=FALSE,row.names=FALSE,col.names=TRUE)
+      
+      #Write CIVILIZED data set file
+	print(&quot;Writing data and R objects---Started!&quot;)
+	# Write CSV file
+	civdest&lt;-sprintf(&quot;%s/%s&quot;, jworkspace,this.output)
+	write.table(hcs, civdest, sep=&quot;,&quot;, quote=FALSE,row.names=FALSE,col.names=TRUE)
+	#DMPQM-293 Write serialized binary R object file
+	robjectdest&lt;-sprintf(&quot;%s/%s&quot;, jworkspace,this.Rds.output)
+	saveRDS(hcs,file=robjectdest)
+	print(&quot;Writing data---Completed!&quot;)
+
+    
+}#end test for CSV_TABLE
+
+#Create data set metadata
+data.props&lt;-rbind(data.props,c(&quot;build.data.path&quot;,sprintf(&quot;%s/%s/builds/%s/archive/&quot;,jbuild.record.root,job.name,build.id)))
+data.props&lt;-rbind(data.props,c(&quot;data.origin&quot;,bparam.jdataori))
+data.props&lt;-rbind(data.props,c(&quot;data.label&quot;,bparam.datalabel))
+data.props&lt;-rbind(data.props,c(&quot;data.owner&quot;,bparam.dataowner))
+data.props&lt;-rbind(data.props,c(&quot;data.description&quot;,bparam.description))
+# DMPQM-363 a data archive path relative to the Build Record Root Directory
+data.props&lt;-rbind(data.props,c(&quot;archive.path&quot;,sprintf(&quot;/%s/builds/%s/archive/&quot;,job.name,build.id))) 
+# DMPQM-359 eventually data.path will be deprecated in favor of archive.path
+data.props&lt;-rbind(data.props,c(&quot;data.path&quot;,sprintf(&quot;%s/%s/builds/%s/archive/&quot;,jbuild.record.root,job.name,build.id)))
+
+
+data.props&lt;-rbind(data.props,c(&quot;file.content&quot;,bparam.filecontent))
+data.props&lt;-rbind(data.props,c(&quot;file.relation&quot;,bparam.filerelation))
+data.props&lt;-rbind(data.props,c(&quot;file.relatives&quot;,bparam.filerelatives))
+
+if(bparam.ignoretechmeta==&apos;false&apos;){
+data.props&lt;-rbind(data.props,c(&quot;data.assay.technology&quot;,bparam.dataclass))
+data.props&lt;-rbind(data.props,c(&quot;instrument&quot;,bparam.instrument))
+data.props&lt;-rbind(data.props,c(&quot;data.processing&quot;,bparam.dataprocessing))
+data.props&lt;-rbind(data.props,c(&quot;assay.layout&quot;,bparam.samplegeometry))
+data.props&lt;-rbind(data.props,c(&quot;sample.arrangement&quot;,bparam.samplearrangement))
+data.props&lt;-rbind(data.props,c(&quot;sample.unique.identifier&quot;,bparam.sampleuniqueid))
+}
+
+#Create Data Download links
+# moved in file content check
+data.props&lt;-rbind(data.props,c(&quot;download.original&quot;,sprintf(&quot;%sartifact/%s&quot;,build.url,bparam.jdatacsv)))
+#data.props&lt;-rbind(data.props,c(&quot;download.build.data&quot;,sprintf(&quot;%sartifact/%s&quot;,build.url,this.output)))
+
+#Write data properties file
+#DMPQM-236 Create, sort and write data.props frame to the properties file
+ord.data.props&lt;-order(data.props[,1]) #get sort order
+write.table(data.props[ord.data.props,], propPath, sep=&quot;=&quot;, quote=FALSE,row.names=FALSE,col.names=FALSE)
+
+</command>
+    </org.biouno.r.R>
+    <org.jenkinsci.plugins.scriptler.builder.ScriptlerBuilder plugin="scriptler@2.9">
+      <builderId>1396978611159_14</builderId>
+      <scriptId>writeXMLProperties_scriptlet.groovy</scriptId>
+      <propagateParams>false</propagateParams>
+      <parameters>
+        <org.jenkinsci.plugins.scriptler.config.Parameter>
+          <name>workspaceVar</name>
+          <value>$WORKSPACE</value>
+        </org.jenkinsci.plugins.scriptler.config.Parameter>
+        <org.jenkinsci.plugins.scriptler.config.Parameter>
+          <name>configProps</name>
+          <value>${JENKINS_HOME}/jobs/${JOB_NAME}/buildProps/report.properties</value>
+        </org.jenkinsci.plugins.scriptler.config.Parameter>
+      </parameters>
+    </org.jenkinsci.plugins.scriptler.builder.ScriptlerBuilder>
+  </builders>
+  <publishers>
+    <hudson.tasks.ArtifactArchiver>
+      <artifacts>*.*</artifacts>
+      <allowEmptyArchive>false</allowEmptyArchive>
+      <onlyIfSuccessful>false</onlyIfSuccessful>
+      <fingerprint>false</fingerprint>
+      <defaultExcludes>true</defaultExcludes>
+      <caseSensitive>true</caseSensitive>
+    </hudson.tasks.ArtifactArchiver>
+    <hudson.plugins.summary__report.ACIPluginPublisher plugin="summary_report@1.15">
+      <name>writeXmlSummary.xml</name>
+      <shownOnProjectPage>false</shownOnProjectPage>
+    </hudson.plugins.summary__report.ACIPluginPublisher>
+    <hudson.plugins.ws__cleanup.WsCleanup plugin="ws-cleanup@0.32">
+      <patterns>
+        <hudson.plugins.ws__cleanup.Pattern>
+          <pattern>**/*.*</pattern>
+          <type>INCLUDE</type>
+        </hudson.plugins.ws__cleanup.Pattern>
+        <hudson.plugins.ws__cleanup.Pattern>
+          <pattern>**/*.properties</pattern>
+          <type>EXCLUDE</type>
+        </hudson.plugins.ws__cleanup.Pattern>
+      </patterns>
+      <deleteDirs>false</deleteDirs>
+      <skipWhenFailed>false</skipWhenFailed>
+      <cleanWhenSuccess>true</cleanWhenSuccess>
+      <cleanWhenUnstable>true</cleanWhenUnstable>
+      <cleanWhenFailure>true</cleanWhenFailure>
+      <cleanWhenNotBuilt>true</cleanWhenNotBuilt>
+      <cleanWhenAborted>true</cleanWhenAborted>
+      <notFailBuild>false</notFailBuild>
+      <cleanupMatrixParent>false</cleanupMatrixParent>
+      <externalDelete></externalDelete>
+    </hudson.plugins.ws__cleanup.WsCleanup>
+  </publishers>
+  <buildWrappers>
+    <hudson.plugins.ws__cleanup.PreBuildCleanup plugin="ws-cleanup@0.32">
+      <patterns>
+        <hudson.plugins.ws__cleanup.Pattern>
+          <pattern>**/*.properties</pattern>
+          <type>INCLUDE</type>
+        </hudson.plugins.ws__cleanup.Pattern>
+      </patterns>
+      <deleteDirs>false</deleteDirs>
+      <cleanupParameter></cleanupParameter>
+      <externalDelete></externalDelete>
+    </hudson.plugins.ws__cleanup.PreBuildCleanup>
+    <EnvInjectBuildWrapper plugin="envinject@1.93.1">
+      <info>
+        <propertiesContent>JData_ori.csv=$My_file</propertiesContent>
+        <loadFilesFromMaster>false</loadFilesFromMaster>
+      </info>
+    </EnvInjectBuildWrapper>
+    <org.jenkinsci.plugins.buildnamesetter.BuildNameSetter plugin="build-name-setter@1.6.5">
+      <template>${ENV,var=&quot;DATA_LABEL&quot;}</template>
+      <runAtStart>true</runAtStart>
+      <runAtEnd>true</runAtEnd>
+    </org.jenkinsci.plugins.buildnamesetter.BuildNameSetter>
+  </buildWrappers>
+</project>
