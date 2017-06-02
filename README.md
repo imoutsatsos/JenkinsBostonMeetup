@@ -1,14 +1,11 @@
-# JenkinsBostonMeetup
-Notes, references and code used for the May 4th 2017, Jenkins Boston Meetup
+# Jenkins Boston Meetup: Life Sciences and Jenkins
+Notes, references and code used for the [May 4th 2017, Jenkins Boston Meetup](https://www.meetup.com/Boston-Jenkins-Area-Meetup/events/237134375/)
 # Abstract
 Jenkins-CI, despite its DevOps pedigree, provides a robust framework for the integration and standardization of scientific workflows.  Scientific applications, custom code, data management, analytics,  and Jenkins plugins can be integrated into pipelines of arbitrary complexity,  and can be made accessible through the Jenkins web portal.  As a result, research scientists can easily access and execute common data processing tasks, access high performance computing resources, collaborate with each other, and track data and metadata to enhance reproducible research. 
 # References
-### Jenkins for Life Science Continous Integration
-> <https://github.com/Novartis/Jenkins-LSCI>
-### Jenkins-LSCI Installation
-> <https://github.com/Novartis/Jenkins-LSCI/blob/master/userContent/docs/installation_and_use.md>
-### Jenkins for Life Science-Boston Jenkins Meetup (Slides)
-> <https://docs.google.com/presentation/d/13XnxIw_F09cfkBzpqRHBm-m4inzAMH36ldzFAwOhoxk/edit?usp=sharing>
+1. Jenkins for Life Science Continous Integration: [github](https://github.com/Novartis/Jenkins-LSCI)
+2. Jenkins-LSCI [Installation instructions](https://github.com/Novartis/Jenkins-LSCI/blob/master/userContent/docs/installation_and_use.md)
+3. Jenkins for Life Science-Boston Jenkins Meetup [(Slides)](https://docs.google.com/presentation/d/13XnxIw_F09cfkBzpqRHBm-m4inzAMH36ldzFAwOhoxk/edit?usp=sharing)
 
 # Demos and code
 At this Meetup I provided usage examples and highlighted some of the Jenkins plugins that we have used to make Jenkins more scientist friendly. An example mini-analytics system using the Jenkins R-Plugin was demonstrated and discussed. 
